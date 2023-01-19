@@ -1,0 +1,443 @@
+// $dark-detail: white;
+// $dark-background: rgba(0, 0, 0, 0.507);
+// $dark-card-background: #6b5c42;
+// $dark-car-background-2: #764132;
+
+// .menu-item svg {
+//   width: 20px;
+//   height: 20px;
+// }
+
+// .menu-item,
+// .nav-bar-left img {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   margin: 5px;
+//   width: fit-content;
+//   align-items: center;
+//   border-radius: 100px;
+//   width: 50px;
+//   height: 50px;
+//   border: 1px solid $dark-card-background;
+//   box-shadow: 3px 3px 0 $detail;
+
+// }
+
+// .menu-item {
+//   cursor: pointer;
+// }
+
+// .nav-bar nav {
+
+//   .nav-bar-right button,
+//   p {
+//     font-size: xx-small;
+//   }
+
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   justify-content: space-around;
+//   border-bottom: 1px solid $detail;
+// }
+
+// .top-nav,
+// .navbar {
+//   margin-top: 5px;
+//   max-width: 500px;
+//   min-width: 300px;
+// }
+
+// .menu-item:hover,
+// .nav-bar-right button:hover {
+//   box-shadow: none;
+//   background-color: $car-background-2;
+// }
+
+
+// .top-border {
+//   top: 0px;
+//   height: 5px;
+//   background-image: url('https://res.cloudinary.com/di6gxsepn/image/upload/v1672966189/ruplrcwnmb5trbkuefrj.svg');
+//   background-repeat: repeat;
+//   width: 100%;
+//   box-shadow: 0px 0px 3px $detail;
+//   border-bottom: 2px solid $detail;
+// }
+
+// .top-nav,
+// .top-center {
+//   * {
+//     color: $detail;
+//     font-size: larger;
+//     text-decoration: none;
+//   }
+
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-around;
+// }
+
+
+// .nav-bar-right button {
+//   width: 50px;
+//   height: 50px;
+//   border-radius: 100px;
+//   font-size: medium;
+//   margin: 5px;
+//   box-shadow: 2px 2px 0 $detail;
+//   background-color: transparent;
+// }
+
+// .home {
+//   padding: 5% 10% 10%;
+// }
+
+
+
+// .userPf {
+//   width: 100%;
+// }
+
+// .userPf img {
+//   object-fit: cover;
+//   width: 100px;
+//   height: 100px;
+// }
+
+// .chart {
+//   background-color: $card-background;
+//   border: 1px solid $detail;
+//   box-shadow: 3px 3px $detail;
+//   padding: 20px;
+//   border-radius: 10px;
+//   width: 100%;
+//   max-width: 500px;
+//   min-width: 100px;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   margin: 50px auto;
+// }
+
+// .chart-images {
+//   display: flex;
+//   justify-content: space-evenly;
+//   width: 100%;
+//   margin: 0px 0px 20px 20px;
+//   gap: 0px;
+
+//   a {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     width: 33%;
+//   }
+// }
+
+// .chart-images img {
+//   object-fit: cover;
+//   width: 50px;
+//   height: 50px;
+//   border-radius: 100px;
+// }
+
+
+// // home page sliders
+
+// .potholeSlider {
+//   .swiper-slide {
+//     width: fit-content
+//   }
+
+//   width: 100%;
+//   height: 400px;
+
+//   .swiper-wrapper {
+//     gap: 0px;
+//   }
+
+//   .swiper-slide {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     padding: 50px;
+
+//     .slider-content {
+//       display: flex;
+//       justify-content: center;
+//       flex-direction: column;
+//       width: 250px;
+//       border-radius: 10px;
+//       box-shadow: 3px 3px 0 $detail;
+//       padding: 0px;
+
+//       .slider-img {
+//         border-radius: 10px 10px 0 0;
+//         border: 1px solid $detail;
+//         background-color: $card-background;
+
+//       }
+
+//       p {
+//         display: flex;
+//         justify-content: center;
+//         border-radius: 0px 0px 10px 10px;
+//         background-color: $car-background-2;
+//         width: 100%;
+//         height: 10%;
+//         padding: 20px 10px;
+//         border: 1px solid $detail;
+//         border-top: none;
+//         font-size: medium;
+//         line-break: anywhere;
+//       }
+
+//       .pothole-image {
+//         margin: 20px;
+//         object-fit: cover;
+//         height: 200px;
+//         width: 200px;
+//         border-radius: 5px;
+//         border: 1px solid $detail;
+//       }
+//     }
+//   }
+
+//   .swiper-button-prev,
+//   .swiper-button-next {
+//     border: 1px solid $detail;
+//     background-color: $card-background;
+//     color: $car-background-2;
+//     padding: 30px 20px;
+//     border-radius: 10px;
+//   }
+// }
+
+// #user-slider {
+//   padding: 5px;
+//   background-color: $card-background;
+//   border-radius: 10px;
+//   border: 1px solid $detail;
+//   box-shadow: 3px 3px $detail;
+
+//   .swiper {
+//     border: 1px solid $detail;
+//     border-radius: 10px;
+//     background-color: $car-background-2;
+//   }
+
+//   .mySwiper img {
+//     object-fit: cover;
+//     width: 100%;
+//     height: 100%;
+//     border-radius: 10px;
+//   }
+
+//   .swiper-wrapper {
+//     gap: 20px;
+//   }
+
+//   .swiper-slide a {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     padding: 3px;
+//     border-radius: 30px;
+
+//     p {
+//       font-size: medium;
+//       padding: 5px;
+//       text-decoration: none;
+//       display: flex;
+//       justify-content: center;
+//     }
+//   }
+
+
+//   .swiper-slide img {
+//     margin: 20px;
+//     background-color: $detail;
+//     border: 1px solid $detail;
+//     box-shadow: 3px 3px 0px $detail;
+//     object-fit: cover;
+//     width: 100px;
+//     height: 100px;
+//   }
+
+//   .swiper-slide {
+//     padding: 5px;
+//     display: flex;
+//     justify-content: center;
+//   }
+// }
+
+// a {
+//   :hover {
+//     text-decoration: none;
+//     color: $detail;
+//   }
+
+//   text-decoration: none;
+//   color: $detail;
+// }
+
+// .swiper-pagination {
+//   display: none;
+// }
+
+// .welcome {
+//   background-color: $card-background;
+//   border: 1px solid $detail;
+//   padding: 5px;
+//   border-radius: 10px;
+//   box-shadow: 3px 3px 0px $detail;
+//   margin: 10px;
+// }
+
+// .on-page .menu-item {
+//   background-color: #81B29A;
+// }
+
+// .chart-desc {
+//   font-size: xx-small;
+//   padding-top: 5px;
+// }
+
+// /*
+// THIS IS WHERE DARK MODE STARTS
+// */
+// .dark-mode {
+
+//   .menu-item,
+//   .nav-bar-left img {
+//     border: 1px solid $dark-detail;
+//     box-shadow: 3px 3px 0 $dark-detail;
+//   }
+
+//   .nav-bar nav {
+//     border-bottom: 1px solid $dark-detail;
+//   }
+
+//   .menu-item:hover,
+//   .nav-bar-right button:hover {
+//     box-shadow: none;
+//     background-color: #292957;
+//   }
+
+//   .top-border {
+//     box-shadow: 0px 0px 3px $dark-detail;
+//     border-bottom: 2px solid $dark-detail;
+//   }
+
+//   .top-nav,
+//   .top-center {
+//     * {
+//       color: $dark-detail;
+//       font-size: larger;
+//       text-decoration: none;
+//     }
+
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-around;
+//   }
+
+
+//   .nav-bar-right button {
+//     width: 50px;
+//     height: 50px;
+//     border-radius: 100px;
+//     font-size: medium;
+//     margin: 5px;
+//     box-shadow: 2px 2px 0 $dark-detail;
+//     background-color: transparent;
+//   }
+
+//   .chart {
+//     background-color: $dark-card-background;
+//     border: 1px solid $dark-detail;
+//     box-shadow: 3px 3px $dark-detail;
+//   }
+
+//   // home page sliders
+//   .potholeSlider {
+//     .swiper-slide {
+//       .slider-content {
+//         box-shadow: 3px 3px 0 $dark-detail;
+//         padding: 0px;
+
+//         .slider-img {
+//           border: 1px solid $dark-detail;
+//           background-color: $dark-card-background;
+//         }
+
+//         p {
+//           background-color: $dark-car-background-2;
+//           border: 1px solid $dark-detail;
+//         }
+
+//         .pothole-image {
+//           border: 1px solid $dark-detail;
+//         }
+//       }
+//     }
+
+//     .swiper-button-prev,
+//     .swiper-button-next {
+//       border: 1px solid $dark-detail;
+//       background-color: $dark-card-background;
+//       color: $dark-car-background-2;
+//     }
+//   }
+
+//   #user-slider {
+//     background-color: $dark-card-background;
+//     border: 1px solid $dark-detail;
+//     box-shadow: 3px 3px $dark-detail;
+
+//     .swiper {
+//       border: 1px solid $dark-detail;
+//       background-color: $dark-car-background-2;
+//     }
+
+//     .swiper-slide img {
+//       background-color: $dark-detail;
+//       border: 1px solid $dark-detail;
+//       box-shadow: 3px 3px 0px $dark-detail;
+//     }
+//   }
+
+//   a {
+//     :hover {
+//       text-decoration: none;
+//       color: $dark-detail;
+//     }
+
+//     text-decoration: none;
+//     color: $dark-detail;
+//   }
+
+//   .swiper-pagination {
+//     display: none;
+//   }
+
+//   .welcome {
+//     background-color: $dark-card-background;
+//     border: 1px solid $dark-detail;
+//     padding: 5px;
+//     border-radius: 10px;
+//     box-shadow: 3px 3px 0px $dark-detail;
+//     margin: 10px;
+//   }
+
+//   .on-page .menu-item {
+//     background-color: $car-background-2;
+//   }
+
+
+//   nav svg :not(#mode svg, #mode circle) {
+//     fill: white;
+//   }
+// }

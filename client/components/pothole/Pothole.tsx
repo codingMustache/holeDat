@@ -127,6 +127,7 @@ const Pothole = () => {
         <Header addy={addy} avg={avg} fixed={fixed} setFixed={setFixed} voteCount={voteCount} user={user} />
         <Slider badge={badge} PImages={PImages} user={user} />
       </Container>
+
       <CommentForm phId={phId} />
     </div>
   );
