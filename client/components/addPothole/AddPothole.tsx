@@ -5,7 +5,6 @@ import axios from 'axios';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
-// import Alert from 'react-bootstrap/Alert';
 import LocationSection from './formSections/LocationSection';
 import ImageSection from './formSections/ImageSection';
 import StatusSection from './formSections/StatusSection';
@@ -47,7 +46,7 @@ const AddPothole = () => {
   const [user_id, setUser_id] = useState<number>(0);
   const [coordinates, setCoordinates] = useState({ lat: 0, lon: 0 });
   const [imageContents, setImageContents] = useState({ file: null, caption: '', photoURL: '' });
-  const [statusContents, setStatusContents] = useState({ fixed: false, rating: 0 });
+  const [statusContents, setStatusContents] = useState({ fixed: null, rating: 0 });
   const [potholeId, setPotholeId] = useState<number>(0);
   // const [showError, setShowError] = useState<boolean>(false);
 

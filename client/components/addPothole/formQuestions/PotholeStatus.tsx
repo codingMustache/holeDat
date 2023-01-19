@@ -12,6 +12,7 @@ const PotholeStatus = () => {
         <div key={`inline-${id}`}>
           <Form.Check
             inline
+            required
             label={label}
             name='group1'
             type='radio'

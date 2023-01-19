@@ -1,8 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Alert from 'react-bootstrap/Alert';
 import { StatusContext } from '../AddPothole';
 import PotholeRating from '../formQuestions/PotholeRating';
 import PotholeStatus from '../formQuestions/PotholeStatus';
@@ -11,6 +12,29 @@ import PotholeStatus from '../formQuestions/PotholeStatus';
 const StatusSection = (prop) => {
   const { handleSubmit } = prop;
   const { statusContents, setStatusContents } = useContext(StatusContext);
+  const [showError, setShowError] = useState<boolean>(false);
+  const [errorText, setErrorText] = useState<string>('');  
+  const { fixed, rating } = statusContents;
+
+  //handle validation
+  const handleValidation = () => {
+    if (rating === 0) {
+      setShowError(true);
+      setErrorText('Select a rating');
+    } else if (fixed === null) { 
+      setShowError(true);
+      setErrorText('Select current pothole status')
+    } else {
+      handleSubmit();
+    }
+  };
+
+  //handle error shown
+  const handleShowError = () => {
+    if (showError === true) {
+      return <Alert variant='danger'>Oops! {errorText}</Alert>;
+    }
+  };
 
   //handle rating click function
   const handleClick = (num) => {
@@ -42,7 +66,9 @@ const StatusSection = (prop) => {
         <PotholeStatus />
       </Form.Group>
 
-      <Button id='nextFormButton' className='basicButton' type='button' onClick={handleSubmit}>
+      {handleShowError()}
+
+      <Button id='nextFormButton' className='basicButton' type='button' onClick={handleValidation}>
         <div className='center' id='wtf'>
           Submit
           <div className='arrow-button arrow-right'></div>
