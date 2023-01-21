@@ -31,7 +31,17 @@ imgs.post('/addimg', upload, (req: any, res: Response) => {
   const file = req.file.path;
 
   cloudinary.v2.uploader
-    .upload(file, { api_key, api_secret, cloud_name })
+    .upload(file, {
+      api_key,
+      api_secret,
+      cloud_name,
+      allowed_formats: ['jpg', 'png', 'heic', 'heif'],
+      width: 600,
+      height: 600,
+      crop: 'fit',
+      quality: 'auto:good',
+      format: 'jpg',
+    })
     .then((data) => {
       res.status(201).json(data.url);
     })

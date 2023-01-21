@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Row from 'react-bootstrap/Row';
 import { useLocation } from 'react-router-dom';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
+<<<<<<< HEAD
 import Switch from 'react-bootstrap/Switch';
 //import PotholeRating from '../addPothole/formQuestions/PotholeRating';
 
@@ -12,11 +13,56 @@ const Header = (prop) => {
   const { addy, avg, voteCount, user, fixed } = prop;
   const [status, setStatus] = useState<boolean>(true);
   const [rating, setRating] = useState<number>(1)
+=======
+// import Switch from 'react-bootstrap/Switch';
+import PotholeRating from '../addPothole/formQuestions/PotholeRating';
+import PotholeStatus from '../addPothole/formQuestions/PotholeStatus';
 
+const Header = (prop) => {
+  const id = Number(useLocation().pathname.split(':')[1]);
+  const [avg, setAvg] = useState<number>(0);
+  const [voteCount, setVotecount] = useState<number>(0);
+  const [rating, setRating] = useState<number>(0);
+  const [newVote, setNewVote] = useState<number>(0);
+  const { addy, fixed, user } = prop;
+  const [status, setStatus] = useState<boolean>(fixed);
+>>>>>>> d56c67269db1fd2fb6bcd5aa5c1c0a51a424ac74
+
+    const getAllRatingByPhId = () => {
+      axios.get('/api/rating/rating' + id).then((data) => {
+        const Avg =
+          data.data.reduce((acc, curr) => {
+            acc += curr;
+            return acc;
+          }, 0) / data.data.length;
+        setAvg(Math.round(Avg));
+        setVotecount(data.data.length);
+        setNewVote(newVote + 1);
+      });
+    };
+  
+  useEffect(getAllRatingByPhId, [newVote])
+  
   //handle rating/status
+<<<<<<< HEAD
   const handleAction = () => {
     axios
       .post('/api/rating/pothole', { id, rating, status, user }) //whatever the current status is
+=======
+  const handleAction = (value) => {
+    const val = value;
+    const type = typeof value === 'number' ? 'rating' : 'status';
+    const ratingStatusObj = { type, value }
+    console.log({type, val})
+    if (type === 'rating') {
+      setRating(val);
+    } else if (type === 'status') {
+      setStatus(val);
+    }
+
+    axios
+      .post('/api/rating/fromPh', { id, ratingStatusObj, status, rating, user }) //pass whatever the current fixed val is/rating in order to create/update
+>>>>>>> d56c67269db1fd2fb6bcd5aa5c1c0a51a424ac74
       .catch((data) => console.log(data));
   };
 
@@ -27,7 +73,7 @@ const Header = (prop) => {
         <Col id='totalRating' className='newline'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
-            width='8%'
+            width='6%'
             fill='currentColor'
             className={`bi bi-cone-striped`}
             viewBox='0 0 16 16'
@@ -41,8 +87,9 @@ const Header = (prop) => {
         </Col>
       </Row>
 
-      {user?.name &&
+      {user?.name && (
         <Row id='ratings'>
+<<<<<<< HEAD
           <Col className='group newline' sm>
             <p>Rate This Pothole:</p>
             <div id='cones' >
@@ -76,6 +123,23 @@ const Header = (prop) => {
                   setStatus(newStatus);
                 }}
               />
+=======
+          <Col className='group' sm>
+            <div className='insideGroup'>
+              <p className='profText'>Rate Pothole Severity:</p>
+              <div className='profComponent'>
+                <PotholeRating handleClick={handleAction} />
+              </div>
+            </div>
+          </Col>
+
+          <Col id='fixed' className='group' sm>
+            <div className='insideGroup'>
+              <p className='profText'>Confirm Pothole Status:</p>
+              <div className='profComponent'>
+                <PotholeStatus handleChange={handleAction} />
+              </div>
+>>>>>>> d56c67269db1fd2fb6bcd5aa5c1c0a51a424ac74
             </div>
             <p>Fixed</p>
             <button
@@ -85,8 +149,13 @@ const Header = (prop) => {
             </button>
           </Col>
         </Row>
+<<<<<<< HEAD
       }
     </Container >
+=======
+      )}
+    </Container>
+>>>>>>> d56c67269db1fd2fb6bcd5aa5c1c0a51a424ac74
   );
 };
 

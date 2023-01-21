@@ -24,11 +24,13 @@ export const addRating = (pothole_id: number, user_id: number, fixed: boolean, r
   Rating.findOne({ where: { pothole_id, user_id } }).then((data) => {
     if (!data) {
       Rating.create({ pothole_id, fixed, overall: rating, user_id })
+        // .then(data => console.log(data))
         .catch((err) =>
         console.log(err)
       );
     } else {
       Rating.update({ fixed, overall: rating }, { where: { pothole_id, user_id } })
+        // .then((data) => console.log(data, pothole_id, rating, user_id))
         .catch((err) => console.log(err));
     }
   });

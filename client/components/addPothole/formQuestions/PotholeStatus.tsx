@@ -1,25 +1,24 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Form from 'react-bootstrap/Form';
-import { StatusContext } from '../AddPothole';
 
 //fixed or busted status
-const PotholeStatus = () => {
-  const { statusContents, setStatusContents } = useContext(StatusContext);
+const PotholeStatus = (prop) => {
+  const { handleChange } = prop;
 
   return (
     <Form.Group id='addPotStatus'>
       {['Busted', 'Fixed'].map((label, id) => (
-        <div key={`inline-${id}`}>
+        <div key={`inline-${id}`} id='statusPick'>
           <Form.Check
             inline
             required
             label={label}
             name='group1'
             type='radio'
+            className='statusVal'
             onChange={() => {
-              const newStatusContents = { ...statusContents };
-              newStatusContents.fixed = label === 'Busted' ? false : true;
-              setStatusContents(newStatusContents);
+              const status = label === 'Busted' ? false : true;
+              handleChange(status)
             }}
           />
         </div>

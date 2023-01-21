@@ -43,6 +43,12 @@ const StatusSection = (prop) => {
     setStatusContents(newStatusContents);
   };
 
+  const handleChange = (status) => {
+    const newStatusContents = { ...statusContents };
+    newStatusContents.fixed = status === 'Busted' ? false : true;
+    setStatusContents(newStatusContents);
+  }
+
   return (
     <Form.Group id='statusSection'>
       <Form.Group className='questionGroup'>
@@ -63,7 +69,7 @@ const StatusSection = (prop) => {
 
       <Form.Group className='questionGroup'>
         <Form.Label className='formQuestion'>Is the Pothole Fixed?</Form.Label>
-        <PotholeStatus />
+        <PotholeStatus handleChange={handleChange} />
       </Form.Group>
 
       {handleShowError()}

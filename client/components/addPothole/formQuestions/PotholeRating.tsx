@@ -25,6 +25,10 @@ const PotholeRating = (prop) => {
                 onClick={() => {
                   handleClick(num);
                   setRating(num);
+<<<<<<< HEAD
+=======
+                  //console.log('numInRating', num);
+>>>>>>> d56c67269db1fd2fb6bcd5aa5c1c0a51a424ac74
                 }}
                 xmlns='http://www.w3.org/2000/svg'
                 fill='currentColor'

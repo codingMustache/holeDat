@@ -49,34 +49,49 @@
 
 //RATINGS
 #ratings {
-  margin: 1%;
+  padding: 0;
+  margin: 2% 2% 0;
   justify-content: center;
-  align-items: center;
+  // align-items: center;
   text-align: center;
 }
-
-
 
 .group {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   width: 100%;
-  margin: 1%;
-  padding: 2%;
+  padding: 15px;
   border: 2px solid $black;
   border-radius: 8px;
   background-color: $green;
-  height: 120px;
+  height: 150px;
+  margin: 1%;
+  
+  .insideGroup{
+    height: 100px;
+  }
 
+  .profText{
+    text-align:start;
+  }
 
-  .fixed {
+  .profComponent {
+    margin-top: 15px;
+    height: 125px;
+  }
+
+  #addPotStatus {
     justify-content: center;
-    text-align: center;
+    align-items: center;
     display: flex;
     flex-wrap: nowrap;
   }
 }
+
+
+
+
 
 #totalRating {
   @extend h3;

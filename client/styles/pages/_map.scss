@@ -23,6 +23,10 @@
   }
 }
 
+.mapboxgl-user-location-accuracy-circle {
+  display: none;
+}
+
 .mapboxgl-popup-close-button,
 .mapboxgl-popup-close-button button:not(:disabled),
 .mapboxgl-popup-close-button>button>[type='button']:not(:disabled):focus {

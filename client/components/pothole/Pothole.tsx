@@ -39,8 +39,8 @@ const Pothole = () => {
   const [PImages, setPImages] = useState<phImg[]>([]);
   const [addy, setAddy] = useState<string[]>([]);
   const [phId] = useState<number>(id);
-  const [avg, setAvg] = useState<number>(0);
-  const [voteCount, setVotecount] = useState<number>(0);
+  // const [avg, setAvg] = useState<number>(0);
+  // const [voteCount, setVotecount] = useState<number>(0);
   const [fixed, setFixed] = useState<boolean>(false);
   const [user, setUser] = useState<User>({
     name: '',
@@ -49,17 +49,17 @@ const Pothole = () => {
     badge_id: undefined,
   });
 
-  const getAllRatingByPhId = () => {
-    axios.get('/api/rating/rating' + id).then((data) => {
-      const Avg =
-        data.data.reduce((acc, curr) => {
-          acc += curr;
-          return acc;
-        }, 0) / data.data.length;
-      setAvg(Math.round(Avg));
-      setVotecount(data.data.length);
-    });
-  };
+  // const getAllRatingByPhId = () => {
+  //   axios.get('/api/rating/rating' + id).then((data) => {
+  //     const Avg =
+  //       data.data.reduce((acc, curr) => {
+  //         acc += curr;
+  //         return acc;
+  //       }, 0) / data.data.length;
+  //     setAvg(Math.round(Avg));
+  //     setVotecount(data.data.length);
+  //   });
+  // };
 
   // get pothole images by potholeID
   const getAllPotholeImgByPhId = () => {
@@ -118,13 +118,13 @@ const Pothole = () => {
     getAllBadges();
     getUser();
     getAllPotholeImgByPhId();
-    getAllRatingByPhId();
+    // getAllRatingByPhId();
   }, []);
 
   return (
     <div id='potholeProfile'>
       <Container id='potholeSect' className='post'>
-        <Header addy={addy} avg={avg} fixed={fixed} setFixed={setFixed} voteCount={voteCount} user={user} />
+        <Header addy={addy} fixed={fixed} setFixed={setFixed} user={user} />
         <Slider badge={badge} PImages={PImages} user={user} />
       </Container>
 

@@ -11,7 +11,6 @@ import StatusSection from './formSections/StatusSection';
 import SubmittedSection from './formSections/SubmittedSection';
 import WelcomeSection from './formSections/WelcomeSection';
 
-
 /* -------------------------------- Contexts -------------------------------- */
 interface LocationContextType {
   coordinates: { lat: number; lon: number };
@@ -19,7 +18,7 @@ interface LocationContextType {
 }
 export const LocationContext = createContext<LocationContextType>({
   coordinates: { lat: 0, lon: 0 },
-  setCoordinates: () => { },
+  setCoordinates: () => {},
 });
 interface ImageContextType {
   imageContents: { file: any; caption: string; photoURL: string };
@@ -27,7 +26,7 @@ interface ImageContextType {
 }
 export const ImageContext = createContext<ImageContextType>({
   imageContents: { file: {}, caption: '', photoURL: '' },
-  setImageContents: () => { },
+  setImageContents: () => {},
 });
 interface StatusContextType {
   statusContents: { fixed: any; rating: number };
@@ -35,7 +34,7 @@ interface StatusContextType {
 }
 export const StatusContext = createContext<StatusContextType>({
   statusContents: { fixed: false, rating: 0 },
-  setStatusContents: () => { },
+  setStatusContents: () => {},
 });
 
 /* --------------------------- Main Form Component -------------------------- */
@@ -45,10 +44,13 @@ const AddPothole = () => {
   const [progress, setProgress] = useState<number>(0);
   const [user_id, setUser_id] = useState<number>(0);
   const [coordinates, setCoordinates] = useState({ lat: 0, lon: 0 });
-  const [imageContents, setImageContents] = useState({ file: null, caption: '', photoURL: '' });
+  const [imageContents, setImageContents] = useState<any>({
+    file: null,
+    caption: '',
+    photoURL: '',
+  });
   const [statusContents, setStatusContents] = useState({ fixed: null, rating: 0 });
   const [potholeId, setPotholeId] = useState<number>(0);
-  // const [showError, setShowError] = useState<boolean>(false);
 
   //retrieve the user id
   useEffect(() => {
@@ -59,14 +61,10 @@ const AddPothole = () => {
 
   //handle click between sections to see new view and handle progress
   const handleClick = () => {
-
-
     const nextSection = sections.indexOf(view) + 1;
     setView(sections[nextSection]);
     setProgress(progress + 34);
-
   };
-
 
   //handle final submission
   const handleSubmit = () => {
@@ -119,9 +117,17 @@ const AddPothole = () => {
   //handle form components/section view
   const handleFormComps = () => {
     if (view === 'Welcome') {
-      return <WelcomeSection handleClick={handleClick} />
+      return <WelcomeSection handleClick={handleClick} />;
     } else if (view === 'Submitted') {
-      return <SubmittedSection potholeId={potholeId} setView={setView}/>;
+      return (
+        <SubmittedSection
+          potholeId={potholeId}
+          setView={setView}
+          setCoordinates={setCoordinates}
+          setImageContents={setImageContents}
+          setStatusContents={setStatusContents}
+        />
+      );
     } else {
       return (
         <Form id='potholeForm' className='formSectionView'>

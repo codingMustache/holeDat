@@ -18,6 +18,8 @@ pothole.post('/addPothole', (req: Request, res: Response) => {
   const { fixed, rating } = req.body.statusContents;
   const { caption, photoURL } = req.body.updatedImageContents;
 
+  coordinates.fixed = fixed;
+
   findAndAddPothole((data) => {
     const pothole_id = data;
     addRating(pothole_id,  user_id, fixed, rating);

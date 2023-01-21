@@ -131,7 +131,16 @@
 
 //STATUS VIEW
 .form-check-label {
-  @extend .formText;
+  @extend p;
+}
+
+.form-check-input {
+  background-color: $muted-pearl;
+}
+
+.form-check-input:checked, .form-check-input:active{
+  background-color: $red;
+  border-color: $red;
 }
 
 .moreDef {
